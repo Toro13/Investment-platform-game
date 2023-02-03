@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
+        <link rel="stylesheet" href="mainpage.css">
+        <title>Main Page</title>
+    </head>
+<body onload="mainPageLoad()">
+    <navbar class="navbar">
+        <h1 class="brand-title" id="brand-title"></h1>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="signin.html" id="signin" class="btn signin_button">Sign In</a></li>
+                <li><a href="signup.html" id="signup" class="btn signup_button">Sign Up</a></li>
+                <li><a onclick="logout()" id="logout" class="btn logout_button">Log Out</a></li>
+            </ul>
+        </div>   
+    </navbar>
+    <div id="formHolderContainer" class="formHolderContainer">
+        <div id="formHolderContainerOne" class="formHolderContainerOne">
+            <div class="container">
+                <form class="form center">
+                   <img class="imgOne" src="https://emojis.wiki/emoji-pics/facebook/chart-increasing-facebook.png">
+                   <h2 class="balance" id="balance"></h2>
+                </form>
+            </div>
+            <div class="container">
+                <form class="form center">
+                   <div class="emojiHolder">
+                       <img class="imgOne emoji" src="https://images.emojiterra.com/twitter/v14.0/512px/1f468-1f4bc.png">
+                   </div>
+                   <button class="formButton" onclick="workButton(event)">Work</button>
+                </form>
+            </div>
+       </div>
+            <div id="formHolderContainerTwo" class="formHolderContainerTwo">
+            <div class="container">
+                <form class="form center">
+                   <h1>Stake:</h1>
+                   <div class="stakeHolder">
+                       <div class="holder holderOne">
+                           <input type="text" class="amount inputOne" id="inputOneFunction" placeholder="Amount">
+                           <h2 class="rate rateButton">5%</h2>
+                           <h2 class="time timeButton">5 seconds</h2>
+                           <button class="stake stakeOneButton" onclick="stakeOne(event)">Stake</button>
+                       </div>
+                       <div class="holder holderTwo">
+                           <input type="text" class="amount inputTwo" id="inputTwoFunction" placeholder="Amount">
+                           <h2 class="rate rateButtonTwo">15%</h2>
+                           <h2 class="time timeButtonTwo">10 seconds</h2>
+                           <button class="stake stakeTwoButton" onclick="stakeTwo(event)">Stake</button>
+                       </div>
+                   </div>
+                </form>
+            </div>
+            <div class="container">
+                <form class="form center">
+                   <h1>Account Log:</h1>
+                   <h2 class="titleTwo" id="info"></h2>
+                   <h2 class="titleTwo green" id="infoGreen"></h2>
+                   <h2 class="titleTwo red" id="infoRed"></h2>
+                </form>
+            </div>
+       </div>
+   </div>
+
+    </div>
+    <div id="noUser" class="noUser">
+        <div class="containerTwo">
+            <form class="form NotIn">
+                <img class="notInEmoji emojiOne" src="https://em-content.zobj.net/source/skype/289/page-with-curl_1f4c3.png">
+               <h1 class="notInTitle">To access the game sign in or register if you dont have an account</h1>
+            </form>
+        </div>
+    </div>
+<script src="mainpage.js"></script>
+
+   </body>
+</html>

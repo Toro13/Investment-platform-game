@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign-in-up.css">
+    <title>Sign In Page</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form class="form">
+            <h1 class="formTitle">Login</h1>
+            <div class="formMessage formMessageError"></div>
+            <div class="formInputGroup">
+                <input type="text" class="formInput" id="username_login" name="username" autofocus placeholder="username">
+                <div class="formInputErrorMessage" id="username_login_error"></div>
+            </div>
+            <div class="formInputGroup">
+                <input type="password" class="formInput" id="password_login" autofocus placeholder="Password">
+                <div class="formInputErrorMessage" id="password_login_error"></div>
+            </div>
+            <button class="formButton" type="submit" onclick="onLogin(event)">Continue</button>
+            <p class="formText">
+                <a class="formLink" href="signup.html" id="linkCreateAccount">Dont have an account? Create account</a>
+                </p>
+        </form>
+    </div>
+        
+
+
+
+
+
+
+    <script src="signin.js"></script>
+</body>
+
+</html>
+
+
+
+<!--
+
+make the body with the video
+then make the functions so they work
+use the wesite to add local storage
+
+
+
+
+-->

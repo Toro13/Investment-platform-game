@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign-in-up.css">
+    <title>Sign Up Page</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form class="form" id="register">
+            <h1 class="formTitle">Create Account</h1>
+            <div class="formMessage formMessageError"></div>
+            <div class="formInputGroup">
+                <input type="text" id="username_register" class="formInput" autofocus placeholder="Username">
+                <div class="formInputErrorMessage" id="username_register_error"></div>
+            </div>
+            <div class="formInputGroup">
+                <input type="text" id="email_register" class="formInput" autofocus placeholder="Email Adress">
+                <div class="formInputErrorMessage" id="email_register_error"></div>
+            </div>
+            <div class="formInputGroup">
+                <input type="password" id="password_register" class="formInput" autofocus placeholder="Password">
+                <div class="formInputErrorMessage" id="password_register_error"></div>
+            </div>
+            <div class="formInputGroup">
+                <input type="password" id="passwordconfirm_register" class="formInput" autofocus placeholder="Confirm Password">
+                <div class="formInputErrorMessage" id="password_confirm_register_error"></div>
+            </div>
+            <button class="formButton" onclick="onRegister(event)" type="submit">Continue</button>
+            <div class="formInputErrorMessage"></div>
+            <p class="formText">
+                <a class="formLink" href="signin.html" id="linkLogin">Already have an account? Sign in</a>
+                </p>
+                <button onclick="clearAll()" class="formHidden">clear</button>
+        </form>
+    </div>
+        
+
+
+
+
+
+
+    <script src="signup.js"></script>
+</body>
+
+</html>
