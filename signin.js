@@ -9,7 +9,7 @@ function onLogin(event) {
     if(localStorageData){
         if(localStorageData[2] == password.value){
             window.localStorage.setItem('usernameLogin', usernameLogin.value);
-            window.location = 'mainpage.html';
+            window.location = 'index.html';
         } else{
             passwordError.innerHTML = "Passwords do not match";
             setTimeout(() => {passwordError.innerHTML = ""}, 3000);
