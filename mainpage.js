@@ -25,11 +25,15 @@ function mainPageLoad(){
         noUser.style.visibility = "hidden";
         if(getUser[4]){
             finalBal = JSON.parse(getUser[4]);
-            balanceResult.innerHTML = "Balance: " + finalBal;
+            let givenNumber = finalBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(givenNumber);
         } else{
             finalBal = 100000;
             getUser.push([finalBal]);
-            balanceResult.innerHTML = "Balance: " + finalBal;
+            let givenNumber = finalBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(givenNumber);
         }
         } else{
         signin.style.visibility = "visible";
@@ -62,16 +66,27 @@ function workButton(event){
             setTimeout(() => { 
             let workProfit = finalBal / 500;
             finalBal = finalBal + workProfit;
-            balanceResult.innerHTML = "Balance: " + Math.round(finalBal);
-            infoGreen.innerHTML = "You have made " + Math.round(workProfit) + " by working a 5 second shift";
+            let newProfit = workProfit;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            infoGreen.innerHTML = "You have made " + internationalNumberFormat.format(Math.round(newProfit)) + " by working a 5 second shift";
             getUser[4] = [Math.round(finalBal)];
             window.localStorage.setItem(usernameLogin, JSON.stringify(getUser));
+            let givenNumber = finalBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(Math.round(givenNumber));
             setTimeout(() => { infoGreen.innerHTML = ""}, 5000);
             workBtn === false;
-            }, 5000);
-            if(info.innerHTML == "" && infoRed.innerHTML == ""){ 
-            infoGreen.innerHTML = "";
+            if(info.innerHTML.length > 0){
+                infoRed.innerHTML = "";
+            } else if(infoRed.innerHTML.length > 0){
+            infoGreen.innerHTML.length = "";
+            } else if(infoGreen.innerHTML.length > 0){
+                info.innerHTML = "";
             }
+            setTimeout(() => { info.innerHTML = ""}, 5000);
+            setTimeout(() => { infoRed.innerHTML = ""}, 5000);
+            setTimeout(() => { infoGreen.innerHTML = ""}, 5000);
+            }, 5000);
         }
     
     }
@@ -94,19 +109,34 @@ function stakeOne(event){
             infoRed.innerHTML = "You must stake more than zero";
             setTimeout(() => { infoRed.innerHTML = ""}, 10000);
         } else if(input.value > 0){
-            info.innerHTML = "You have successfully staked " + JSON.parse(input.value);
+            let inputNumber = input.value;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            info.innerHTML = "You have successfully staked " + internationalNumberFormat.format(Math.round(JSON.parse(inputNumber)));
             let subBal = finalBal - JSON.parse(input.value);
-            balanceResult.innerHTML = "Balance: " + Math.round(subBal);
+            let newBal = subBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(Math.round(newBal));
             setTimeout(() => { info.innerHTML = ""}, 10000);
             setTimeout(() => { 
             let profit = input.value / 100 * 5;
             finalBal = subBal + profit + JSON.parse(input.value);
-            balanceResult.innerHTML = "Balance: " + Math.round(finalBal);
             infoGreen.innerHTML = "You have made " + Math.round(profit) + " by staking " + JSON.parse(input.value);
             getUser[4] = [Math.round(finalBal)];
             window.localStorage.setItem(usernameLogin, JSON.stringify(getUser));
-            setTimeout(() => { infoGreen.innerHTML = ""}, 10000);
+            let givenNumber = finalBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(Math.round(givenNumber));
             stakeOneBtn == true;
+            if(info.innerHTML.length > 0){
+                infoRed.innerHTML = "";
+            } else if(infoRed.innerHTML.length > 0){
+            infoGreen.innerHTML.length = "";
+            } else if(infoGreen.innerHTML.length > 0){
+                info.innerHTML = "";
+            }
+            setTimeout(() => { info.innerHTML = ""}, 5000);
+            setTimeout(() => { infoRed.innerHTML = ""}, 5000);
+            setTimeout(() => { infoGreen.innerHTML = ""}, 5000);
             }, 5000);
         }
     }
@@ -128,20 +158,39 @@ function stakeTwo(event){
             infoRed.innerHTML = "You must stake more than zero";
             setTimeout(() => { infoRed.innerHTML = ""}, 10000);
         } else if(input.value > 0){
-            info.innerHTML = "You have successfully staked " + JSON.parse(input.value);
+            let inputNumber = JSON.parse(input.value);
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            info.innerHTML = "You have successfully staked " + internationalNumberFormat.format(Math.round(JSON.parse(inputNumber)));
             let subBal = finalBal - JSON.parse(input.value);
-            balanceResult.innerHTML = "Balance: " + Math.round(subBal);
+            let newBal = subBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(Math.round(newBal));
+            console.log(subBal);
             setTimeout(() => { info.innerHTML = ""}, 10000);
             setTimeout(() => { 
             let profit = input.value / 100 * 15;
             finalBal = subBal + profit + JSON.parse(input.value);
-            balanceResult.innerHTML = "Balance: " + Math.round(finalBal);
-            infoGreen.innerHTML = "You have made " + Math.round(profit) + " by staking " + JSON.parse(input.value);
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            infoGreen.innerHTML = "You have made " + internationalNumberFormat.format(Math.round(profit)) + " by staking " + internationalNumberFormat.format(JSON.parse(input.value));
             getUser[4] = [Math.round(finalBal)];
             window.localStorage.setItem(usernameLogin, JSON.stringify(getUser));
+            let givenNumber = finalBal;
+            internationalNumberFormat = new Intl.NumberFormat('en-UK');
+            balanceResult.innerHTML = "Balance: " + internationalNumberFormat.format(Math.round(givenNumber));
+            if(info.innerHTML.length > 0){
+                infoRed.innerHTML = "";
+            } else if(infoRed.innerHTML.length > 0){
+            infoGreen.innerHTML.length = "";
+            } else if(infoGreen.innerHTML.length > 0){
+                info.innerHTML = "";
+            }
+            setTimeout(() => { info.innerHTML = ""}, 10000);
+            setTimeout(() => { infoRed.innerHTML = ""}, 10000);
             setTimeout(() => { infoGreen.innerHTML = ""}, 10000);
             stakeOneBtn == true;
             }, 10000);
         }
     }
 }
+
+
